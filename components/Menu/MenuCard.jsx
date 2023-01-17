@@ -1,6 +1,13 @@
 import { View, Text, TouchableWithoutFeedback, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { useContext } from 'react';
+import productContext from '../../Context/ProductContext';
+
 const MenuCard = ({product}) => {
+  
+
+  const {addToCart, cart} = useContext(productContext)
+
   return (
     <TouchableWithoutFeedback>
         <View style={styles.mainCardView}>
@@ -17,8 +24,8 @@ const MenuCard = ({product}) => {
                 </View>
             </View>
             <View>
-                    <TouchableOpacity>
-                    <Ionicons name="cart" size={32} color="red"  />
+                    <TouchableOpacity onPress={()=>addToCart(product)}>
+                        <Ionicons name="cart" size={32} color="red"  />
                     </TouchableOpacity>
                 </View>
         </View>

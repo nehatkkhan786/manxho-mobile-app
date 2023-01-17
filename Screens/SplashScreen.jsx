@@ -2,6 +2,7 @@ import { View, Text, SafeAreaView, Image } from 'react-native'
 import React, { useLayoutEffect, useEffect } from 'react'
 import { useNavigation } from '@react-navigation/native'
 
+
 const SplashScreen = () => {
 
     const navigation = useNavigation();
@@ -21,7 +22,7 @@ const SplashScreen = () => {
 
   return (
     <SafeAreaView style={{ backgroundColor:'black', height:'100%', justifyContent:'center', alignItems:'center',}}> 
-        <Image source={{uri:"https://shop.manxho.co.in/static/media/logo.a13da29e0076c16ed226.png"}} style={{height:150, width:150}} />
+        <Image source={require('../assets/Images/logo.gif')} style={{height:200, width:200}} />
         <Text style={{color:'white', marginTop:5, fontSize:25, fontWeight:'bold'}}>Local . Hygienic . Fresh</Text>
     </SafeAreaView>
   )

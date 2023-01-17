@@ -6,12 +6,15 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import ProfileScreen from "../Screens/ProfileScreen"
 import CartScreen from "../Screens/CartScreen"
+import { useContext } from 'react';
+import productContext from '../Context/ProductContext';
 
 
 const BottomNav = createBottomTabNavigator();
 
 
 const BottomNavigation = () => {
+  const {cart} = useContext(productContext)
   return (
     <BottomNav.Navigator screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
@@ -42,7 +45,7 @@ const BottomNavigation = () => {
       })}>
         <BottomNav.Screen name="Home" component={HomeScreen}/>
         <BottomNav.Screen name="Profile" component={ProfileScreen}/>
-        <BottomNav.Screen name="Cart" component={CartScreen} options={{tabBarBadge:3}}/>
+        <BottomNav.Screen name="Cart" component={CartScreen} options={{tabBarBadge:cart?.length}}/>
     </BottomNav.Navigator>
   )
 }

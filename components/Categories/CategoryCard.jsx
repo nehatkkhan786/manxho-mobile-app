@@ -9,7 +9,7 @@ const CategoryCard = ({item, selectedCat, setSelectedCat}) => {
             >
             <Image
                 source ={{uri:`https://api.manxho.co.in${item.image}`}} 
-                style={{width:80, height:80, borderRadius:50,resizeMode:'cover', marginBottom:10}}
+                style={{width:60, height:60, borderRadius:50,resizeMode:'cover', marginBottom:10}}
                 />
             <Text style={ selectedCat == item._id ? {fontSize:18, fontWeight:'bold' } :{fontSize:12} }>{item.title}</Text>
         </TouchableOpacity>
