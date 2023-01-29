@@ -19,7 +19,7 @@ const MenuCard = ({product}) => {
                 </View>
 
                 <View style={{marginLeft:20}}>
-                    <Text style={{fontSize:18, fontWeight:'bold', textTransform: 'uppercase',}}>{product?.title}</Text>
+                    <Text style={{fontSize:14, fontWeight:'bold', textTransform: 'uppercase',}}>{product?.title}</Text>
                     <Text style={{marginTop:5}}>Rs.{product.price} / {product.size}</Text>
                 </View>
             </View>

@@ -6,10 +6,9 @@ import { CategoryMenus } from '../../data/CategoryData'
 import productContext from '../../Context/ProductContext'
 
 
-const Category = () => {
-  const [selectedCat, setSelectedCat] = useState(1)
+const Category = ({selectedCat,setSelectedCat }) => {
   const {categories, getAllCategories} = useContext(productContext)
-
+  
   useEffect(()=>{
       getAllCategories();
      

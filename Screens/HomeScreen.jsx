@@ -1,5 +1,5 @@
 import { View, SafeAreaView, TextInput, TouchableOpacity,  } from 'react-native'
-import React, { useLayoutEffect } from 'react'
+import React, { useLayoutEffect, useState } from 'react'
 import { useNavigation } from '@react-navigation/native'
 import Ionicons from '@expo/vector-icons/Ionicons';
 import Category from '../components/Categories/Category';
@@ -9,6 +9,8 @@ import Header from '../components/Header';
 
 const HomeScreen = () => {
     const navigation = useNavigation();
+
+    const [selectedCat, setSelectedCat] = useState()
 
     useLayoutEffect(()=>{
         navigation.setOptions({
@@ -32,12 +34,12 @@ const HomeScreen = () => {
         {/* Menu Categories */}
 
         <View>
-            <Category/>
+            <Category selectedCat={selectedCat} setSelectedCat = {setSelectedCat}/>
         </View>
 
         {/* Menu */}
         <View>
-            <MenuList/>
+            <MenuList selectedCat={selectedCat}/>
         </View>
 
 
